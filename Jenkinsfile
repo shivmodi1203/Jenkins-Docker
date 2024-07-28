@@ -5,6 +5,7 @@ pipeline{
     environment{
         dockerImage = ''
         registry = 'shivmodi1203/jenkins_docker_image'
+        registryCredentials = 'Docker'
     }
 
     stages{
@@ -12,6 +13,13 @@ pipeline{
             steps{
                 script{
                     dockerImage = docker.build("${registry}:latest")
+                }
+            }
+        }
+        stage('Push Docker Image'){
+            steps{
+                script{
+                    dockerImage.push()
                 }
             }
         }
