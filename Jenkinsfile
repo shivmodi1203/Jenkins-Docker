@@ -5,7 +5,7 @@ pipeline{
     environment{
         dockerImage = ''
         registry = 'shivmodi1203/jenkins_docker_image'
-        registryCredentials = 'Docker   '
+        registryCredentials = 'Docker'
     }
 
     stages{
